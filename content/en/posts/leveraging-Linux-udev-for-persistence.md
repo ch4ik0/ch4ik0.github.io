@@ -257,7 +257,7 @@ Let's see it in action:
 
 We can also modify the match key of the rule to match the detection of any network interface different from `loopback`. This way, we ensure that each time the machine counts with a valid network interface, it'll try to establish the connection to the `C2`. This event is produced at system startup. The rule would be the following:
 ```bash
-SUBSYSTEM="net", KERNEL!="lo", RUN+="/bin/sh -c '/opt/scripts/trigger.sh'"
+SUBSYSTEM=="net", KERNEL!="lo", RUN+="/usr/bin/at -M -f /opt/scripts/trigger.sh now"
 ```
 
 So each time the system boots, the persistence will be triggered:
