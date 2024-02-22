@@ -253,7 +253,7 @@ sliver (BROKEN_THERAPIST) >
 ```
 Let's see it in action:
 
-{{< video autoplay="true" loop="true" src="/posts/leveraging-Linux-udev-for-persistence/persistence_udev_usb.webm" >}}
+{{< video autoplay="true" loop="true" src="/posts/leveraging-Linux-udev-for-persistence/persistence_udev_usb" >}}
 
 We can also modify the match key of the rule to match the detection of any network interface different from `loopback`. This way, we ensure that each time the machine counts with a valid network interface, it'll try to establish the connection to the `C2`. This event is produced at system startup. The rule would be the following:
 ```bash
@@ -262,7 +262,7 @@ SUBSYSTEM="net", KERNEL!="lo", RUN+="/bin/sh -c '/opt/scripts/trigger.sh'"
 
 So each time the system boots, the persistence will be triggered:
 
-{{< video autoplay="true" loop="true" src="/posts/leveraging-Linux-udev-for-persistence/persistence_udev_iface.webm" >}}
+{{< video autoplay="true" loop="true" src="/posts/leveraging-Linux-udev-for-persistence/persistence_udev_iface" >}}
 
 ## Mitigation and detection
 ### Mitigation
