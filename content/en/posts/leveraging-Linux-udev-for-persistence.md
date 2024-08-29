@@ -7,6 +7,8 @@ showtoc: true
 categories: ["redteam"]
 tags: ["persistence", "linux"]
 url: "/en/posts/leveraging-Linux-udev-for-persistence"
+images:
+- "/posts/leveraging-Linux-udev-for-persistence/lights-prisms-effect-close-up.jpg"
 draft: false
 ---
 ## Introduction
