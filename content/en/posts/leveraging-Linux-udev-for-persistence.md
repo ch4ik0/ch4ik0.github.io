@@ -11,6 +11,9 @@ images:
 - "/posts/leveraging-Linux-udev-for-persistence/lights-prisms-effect-close-up.jpg"
 draft: false
 ---
+{{< admonition info "Update 2025/03/26" true>}}
+I'm excited to share that I contributed to MITRE ATT&CK v16.1 matrix (October 31, 2024) with the inclusion of this technique: T1564.017 (udev rules for persistence) [\[6\]](https://attack.mitre.org/techniques/T1546/017/).
+{{< /admonition >}}
 ## Introduction
 `udev` is widely known among system administrators. It's a device manager for the Linux kernel that allows users to manage devices in the `/dev/` directory and create actions based on hardware events. Common use cases include renaming a network interface or modifying rights over a specific hard disk when they're plugged in. Among the capabilities of `udev` is the execution of scripts based on hardware events (such as detection), which makes it a good candidate to be employed as a persistence mechanism. To my surprise, at the time I ran into `udev` there was no subtechnique listed in MITRE ATT&CK matrix. This fact led me to start a mini-research and explore this possibility. In this article, I will share how I run into `udev` and how I could bypass the restrictions that it presents in order to use it as a persistence mechanism in a red team operation.
 
@@ -293,3 +296,4 @@ In this post we have seen how to leverage `udev` to use it as a feasible persist
 - \[3\] https://askubuntu.com/questions/1166849/18-04-how-can-udev-rule-run-script-access-network
 - \[4\] https://codexlynx.github.io/posts/2021/04/gaining-persistence-linux-udev.html
 - \[5\] https://hadess.io/the-art-of-linux-persistence/
+- \[6\] https://attack.mitre.org/techniques/T1546/017/
